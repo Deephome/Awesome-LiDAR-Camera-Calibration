@@ -8,22 +8,52 @@ A Collection of LiDAR-Camera-Calibration Papers, Toolboxes and Notes.
 - [Introduction](#0-introduction)
 - [Target-based methods](#1-target-based-methods)
 - [Targetless methods](#2-targetless-methods)
-  - [motion-based methods](#21-motion-based-methods)
-  - [scene-based-methods](#22-scene-based-methods)
+  - [Motion-based methods](#21-motion-based-methods)
+  - [Scene-based-methods](#22-scene-based-methods)
+    - [Traditional Methods](#221-traditional-methods)
+    - [Deep-learning Methods](#223-deep-learning-methods)
 - [Other Toolboxes](#3-other-toolboxes)
 
 ## 0. Introduction
 For applications such as autonomous driving, robotics, navigation systems, and 3-D scene reconstruction, data of the same scene is often captured using both lidar and camera sensors. To accurately interpret the objects in a scene, it is necessary to fuse the lidar and the camera outputs together. Lidar camera calibration estimates a **rigid transformation matrix (extrinsics, rotation+translation, 6 DoF)** that establishes the correspondences between the points in the 3-D lidar plane and the pixels in the image plane. 
 
-![Example](...)
+![Example](https://github.com/Deephome/Awesome-LiDAR-Camera-Calibration/blob/main/projection.png)
 ## 1. Target-based methods
+|Paper|Target|Feature|Optimization|Toolbox|Note|
+| --- | --- | --- | --- | --- | --- |
+| [Extrinsic Calibration of a Camera and Laser Range Finder (improves camera calibration), 2004](http://lars.mec.ua.pt/public/LAR%20Projects/Modelling/2011_MiguelAlmeida/Documentos%20leitura/Extrinsic%20Calibration%20of%20a%20Camera%20and%20Laser.pdf) | checkerboard |C:Plane (a), L: pts in plane (m)| point-to-plane | [CamLaserCalibraTool](https://github.com/MegviiRobot/CamLaserCalibraTool) | [CN](https://zhuanlan.zhihu.com/p/137501892)
+| [Fast Extrinsic Calibration of a Laser Rangefinder to a Camera, 2005](http://www.cs.cmu.edu/~ranjith/lcct.html) | checkerboard| C: Plane (a), L: Plane (m)| plane(n/d) correspondence, point-to-plane | [LCCT](http://www.cs.cmu.edu/~ranjith/lcct.html) | * |
+|[Extrinsic calibration of a 3D laser scanner and an omnidirectional camera, 2010]()|checkerboard|C: plane (a), L: pts in plane (m)|point-to-plane|[cam_lidar_calib](https://github.com/SubMishMar/cam_lidar_calib)|*|
+|[LiDAR-Camera Calibration using 3D-3D Point correspondences, 2017](https://arxiv.org/abs/1705.09785)| cardboard + ArUco | C: 3D corners (a), L: 3D corners (m) | ICP | [lidar_camera_calibration](https://github.com/ankitdhall/lidar_camera_calibration) | * |
+|[Reflectance Intensity Assisted Automatic and Accurate Extrinsic Calibration of 3D LiDAR and Panoramic Camera Using a Printed Chessboard, 2017](http://www.mdpi.com/2072-4292/9/8/851/htm)| checkerboard | C: 2D corners (a), L: 3D corners (a) |PnP, angle difference|[ILCC](https://github.com/mfxox/ILCC)|* |
+|[Extrinsic Calibration of Lidar and Camera with Polygon, 2018](https://ram-lab.com/papers/2018/liao_robio2018.pdf) | regular cardboard |C: 2D edge, corners (a), L: 3D edge, pts in plane (a) | point-to-line, point-inside-polygon | [ram-lab/plycal](https://github.com/ram-lab/plycal) | * |
+|[Automatic Extrinsic Calibration of a Camera and a 3D LiDAR using Line and Plane Correspondences, 2018](http://www.cs.cmu.edu/~kaess/pub/Zhou18iros.pdf)| checkerboard | C: 3D edge, plane(a), L: 3D edge, pts in plane (a) | direcion/normal, point-to-line, point-to-plane | [Matlab LiDAR Toolbox](https://ww2.mathworks.cn/help/lidar/ug/lidar-and-camera-calibration.html)  |*| 
+|[Improvements to Target-Based 3D LiDAR to Camera Calibration, 2020](https://arxiv.org/pdf/1910.03126v3.pdf)|square ArUco|C: 2d corners (a), L: 3D corners (a) | PnP, IOU | [github](https://github.com/UMich-BipedLab/extrinsic_lidar_camera_calibration)|*|
+|[ACSC: Automatic Calibration for Non-repetitive Scanning Solid-State LiDAR and Camera Systems, 2020](https://arxiv.org/pdf/2011.08516.pdf)|checkerboard | C: 2D corners (a), L: 3D corners (a) | PnP | [ACSC](https://github.com/HViktorTsoi/ACSC) | * |
+|[Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor Setups, 2021](https://arxiv.org/abs/2101.04431)|cardboard with circle & Aruco| C: 3D points (a), L: 3D points (a) | ICP | [velo2cam_ calibration](https://github.com/beltransen/velo2cam_calibration)|*|
+
+> C: camera, L: LiDAR, a: automaic, m: manual
+
+## 2. Targetless methods  
+
+### 2.1 Motion-based methods
+|Paper|Feature|Optimization|Toolbox|Note|
+| --- | --- | --- | --- | --- |
+|[LiDAR and Camera Calibration Using Motions Estimated by Sensor Fusion Odometry, 2018](https://arxiv.org/pdf/1804.05178.pdf)|C: motion (ICP),  L: motion (VO) | hand-eye calibration | * | * | 
+
+### 2.2 Scene-based methods
+#### 2.2.1 Traditional methods
+|Paper|Feature|Optimization|Toolbox|Note|
+| --- | --- | --- | --- | --- |
+|[Automatic Targetless Extrinsic Calibration of a 3D Lidar and Camera by Maximizing Mutual Information, 2012](http://robots.engin.umich.edu/publications/gpandey-2012a.pdf)|C：grayscale, L: reflectivity| mutual information, BB steepest gradient ascent | [Extrinsic Calib](http://robots.engin.umich.edu/SoftwareData/ExtrinsicCalib)|*|
+|[Automatic Calibration of Lidar and Camera Images using Normalized Mutual Information, 2013](http://www-personal.acfr.usyd.edu.au/jnieto/Publications_files/TaylorICRA2013.pdf)|C:grayscale, L: reflectivity, noraml | normalized MI, particle swarm | *|*|
+|[Automatic Online Calibration of Cameras and Lasers, 2013](http://www.roboticsproceedings.org/rss09/p29.pdf)|C: Canny edge, L: depth-discontinuous edge| correlation, grid search | * | * |
+|[A Low-cost and Accurate Lidar-assisted Visual SLAM System, 2021](http://www.zywok.com:20441/index.php/s/xEqCafR6dEp4REZ)|C: edge(grayscale), L: edge (reflectivity, depth projection) | ICP,  coordinate descent algorithms | [CamVox](https://github.com/ISEE-Technology/CamVox) |*|
+|[Pixel-level Extrinsic Self Calibration of High Resolution LiDAR and Camera in Targetless Environments,2021](http://arxiv.org/abs/2103.01627)|C:Canny edge(grayscale), L: depth-continuous edge|point-to-line, Gaussian-Newton|[livox_camera_calib](https://github.com/hku-mars/livox_camera_calib)|*|
+|[CRLF: Automatic Calibration and Refinement based on Line Feature for LiDAR and Camera in Road Scenes, 2021](https://arxiv.org/pdf/2103.04558v1.pdf)|C:straight line, L: straight line | P3L | * | [CN](https://cloud.tencent.com/developer/article/1805735) |
 
 
-## 2. Targetless methods
 
-### 2.1 motion-based methods
-
-### 2.2 scene-based methods
 
 
 ## 3. Other toolboxes
