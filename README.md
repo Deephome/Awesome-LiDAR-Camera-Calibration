@@ -18,6 +18,7 @@ A Collection of LiDAR-Camera-Calibration Papers, Toolboxes and Notes.
 For applications such as autonomous driving, robotics, navigation systems, and 3-D scene reconstruction, data of the same scene is often captured using both lidar and camera sensors. To accurately interpret the objects in a scene, it is necessary to fuse the lidar and the camera outputs together. Lidar camera calibration estimates a **rigid transformation matrix (extrinsics, rotation+translation, 6 DoF)** that establishes the correspondences between the points in the 3-D lidar plane and the pixels in the image plane. 
 
 ![Example](https://github.com/Deephome/Awesome-LiDAR-Camera-Calibration/blob/main/projection.png)
+
 ## 1. Target-based methods
 |Paper|Target|Feature|Optimization|Toolbox|Note|
 | --- | --- | --- | --- | --- | --- |
