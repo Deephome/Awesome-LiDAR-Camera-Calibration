@@ -33,7 +33,7 @@ For applications such as autonomous driving, robotics, navigation systems, and 3
 |[ACSC: Automatic Calibration for Non-repetitive Scanning Solid-State LiDAR and Camera Systems, 2020](https://arxiv.org/pdf/2011.08516.pdf)|checkerboard | C: 2D corners (a), L: 3D corners (a) | PnP | [ACSC](https://github.com/HViktorTsoi/ACSC) | * |
 |[Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor Setups, 2021](https://arxiv.org/abs/2101.04431)|cardboard with circle & Aruco| C: 3D points (a), L: 3D points (a) | ICP | [velo2cam_ calibration](https://github.com/beltransen/velo2cam_calibration)|*|
 |[Single-Shot is Enough: Panoramic Infrastructure Based Calibration of Multiple Cameras and 3D LiDARs,2021 IROS](https://arxiv.org/pdf/2103.12941.pdf)|panoramic infrastructure|C: CCTag(a), L: corner points and vectors(a)|PnP, ICP|[multiple-cameras-and-3D-LiDARs-extrinsic-calibration](https://github.com/alibaba/multiple-cameras-and-3D-LiDARs-extrinsic-calibration)|*|
-
+|[Joint Camera Intrinsic and LiDAR-Camera Extrinsic Calibration, 2023, ICRA](https://arxiv.org/pdf/2202.13708.pdf)|chessboard + circles | C: chessboard corners, circle centers, L: circle centers | PnP, intrinsic constraints (corners, cirlce center)| [OpenCalib/JointCalib](https://github.com/OpenCalib/JointCalib) | [CN](https://mp.weixin.qq.com/s/AcygRdkTlb_X9Rn8jSYXAQ) |
 
 > C: camera, L: LiDAR, a: automaic, m: manual
 
