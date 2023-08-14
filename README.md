@@ -64,6 +64,7 @@ For applications such as autonomous driving, robotics, navigation systems, and 3
 |[RegNet: Multimodal sensor registration using deep neural networks, 2017,IV](https://arxiv.org/pdf/1707.03167.pdf)|[regnet](https://github.com/aaronlws95/regnet)|*|
 |[CalibNet: Geometrically supervised extrinsic calibration using 3d spatial transformer networks,2018,IROS](https://arxiv.org/pdf/1803.08181.pdf)|[CalibNet](https://github.com/epiception/CalibNet)|*|
 |[LCCNet: Lidar and Camera Self-Calibration using CostVolume Network,2021,CVPRW](https://openaccess.thecvf.com/content/CVPR2021W/WAD/papers/Lv_LCCNet_LiDAR_and_Camera_Self-Calibration_Using_Cost_Volume_Network_CVPRW_2021_paper.pdf)|[LCCNet](https://github.com/IIPCVLAB/LCCNet)|*|
+|[Calib-Anything: Zero-training LiDAR-Camera Extrinsic Calibration Method Using Segment Anything,2023](https://arxiv.org/pdf/2306.02656.pdf)|[Calib-Anything](https://github.com/OpenCalib/CalibAnything)|*|
 
 ## 3. Other toolboxes
 |Toolbox|Introduction|Note|
