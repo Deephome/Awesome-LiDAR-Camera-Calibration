@@ -76,4 +76,5 @@ For applications such as autonomous driving, robotics, navigation systems, and 3
 |[livox_camera_lidar_calibration](https://github.com/Livox-SDK/livox_camera_lidar_calibration)|pick points mannually, PnP| *|
 |[OpenCalib](https://github.com/PJLab-ADG/SensorsCalibration)|target-based, target-less, mannual|OpenCalib: A Multi-sensor Calibration Toolbox for Autonomous Driving|
 |[tier4/CalibrationTools](https://github.com/tier4/CalibrationTools)|target-based, mannual|*|
+|[ika-rwth-aachen/ros2_calib](https://github.com/ika-rwth-aachen/ros2_calib)| pick points manually, RANSAC+PnP | Seamless integration with ROS2: Read camera image+intrinsics, point cloud and TF tree directly from rosbag and generate target transform as URDF joint. |
 
